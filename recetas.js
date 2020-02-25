@@ -4,29 +4,63 @@
 
 
 
-const ingrediente1 = confirm("Si tenés arroz, apretá confirmar");
-const ingrediente2 = confirm("Si tenés cebolla, apretá confirmar");
-const ingrediente3 = confirm("Si tenés pollo, apretá confirmar");
-const ingrediente4 = confirm("Si tenés morrón, apretá confirmar");
-const ingrediente5 = confirm("Si tenés jengibre, apretá confirmar");
+const tieneHuevo = confirm("Si tenés huevo, apretá confirmar");
+const tieneManteca = confirm("Si tenés manteca, apretá confirmar");
+const tienePapa = confirm("Si tenés papa, apretá confirmar");
+const tieneQueso = confirm("Si tenés queso, apretá confirmar");
+const tieneCarne = confirm("Si tenés carne, apretá confirmar");
 
-if (ingrediente1 === true && ingrediente2 === true ) {
-        let receta = confirm("Podés hacer arroz con cebolla caramelizada, ¿elegís esta receta?")
+// 2 Ingredientes
+const omelette = tieneHuevo && tieneQueso;
+const pastelDePapa = tienePapa && tieneCarne;
 
-        if(receta === true) {
-            alert(Buenísimo, adiós)
-        } else {
-            alert("Podés hacer arroz con aros de cebolla");
-        };
+// 3 Ingredientes
+const tortillaDePapa = tieneHuevo && tienePapa && tieneQueso;
+const carneconPure = tienePapa && tieneCarne  && tieneManteca;
+
+// 4 Ingredientes
+
+const carneConPureyHuevo = tienePapa && tieneCarne  && tieneManteca && tieneHuevo;
+const carneConPureyQUeso = tienePapa && tieneCarne  && tieneManteca && tieneQueso;
+
+// 5 Ingredientes
+const superRejunte = tienePapa && tieneCarne  && tieneManteca && tieneQueso && tieneHuevo;
+
+const puedeRecetas = omelette || pastelDePapa || tortillaDePapa || carneconPure || carneConPureyHuevo || carneConPureyQUeso || superRejunte;
 
 
+let receta = "";
 
 
+if (superRejunte) {
+    receta += "- super rejunte\n";
+} 
+if (carneConPureyHuevo) {
+    receta += "- carne con puré y huevo\n";
+}
+if (carneConPureyQUeso) {
+    receta += "- carne con puré y queso\n";
 
+}
+if (tortillaDePapa) {
+    receta += "- tortilla de papa\n";
 
+}
+if (carneconPure) {
+    receta += "- carne con puré\n";
 
+}
+if (omelette) {
+    receta += "- omelette\n";
 
+}
+if (pastelDePapa) {
+    receta += "- pastel de papa\n";
 
-} else if (ingrediente1 === true || ingrediente2 === true) {
-    alert("No tengo recetas para vos");
+} 
+if (puedeRecetas) {
+    alert(`Podés preparar las siguientes recetas: 
+    ${receta}`);
+} else {
+    alert("Pida un delivery");
 }

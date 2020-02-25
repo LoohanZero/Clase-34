@@ -10,7 +10,6 @@
 
 let kilos = prompt("¿Cuántos kilos de helado desea comprar. Opciones: 1/4, 1/2, 3/4 o 1kg?");
 
-// const sabores = kilos * 2;
 
 if (kilos === "1/4") {
     alert("Usted puede elegir dos sabores");
@@ -50,5 +49,5 @@ if (kilos === "1/4") {
 
     alert(`Usted a comprado ${kilos} kilos de ${sabores}.`);
 } else {
-    alert("Atenete a la pregunta");
+    alert("Respondeme lo que te pregunto");
 }
